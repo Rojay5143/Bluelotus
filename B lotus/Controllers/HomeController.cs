@@ -21,6 +21,10 @@ namespace B_lotus.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }  
+        public IActionResult MorePage()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

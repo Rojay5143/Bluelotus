@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Http
+@model  B_lotus.Models.Company
+@{ Layout = Context.Session.GetString("myLayout");
+     ViewBag.PageHead = "Company Profile";
+}
+<link rel="stylesheet" type="text/css" href="/css/profile.css">
+ 
+<button class="btn btn-info mb-2" onclick="history.back()"><i class="fa fa-arrow-left"></i> Go Back</button>
+    <div class="whole">
+ <div class="wrapper">
+    
+    <div class="form">
+        <div class="topcont">
+          <div class="topright">
+            <div class="logo">
+          <img class="image1" src="@Model.CompanyProfile">
+       </div>  
+        </div>
+        </div>
+        <div class="topleft">
+             <div class="inputfield top">
+          <p><h2>@Model.CompanyName</h2></p>
+       </div>  
+        <div class="inputfield top">
+          <label>Reg No</label>
+          <label class="lbl">@Model.Reg_No</label>
+       </div>  
+       <div class="inputfield top">
+          <label>VAT/PAN</label>
+      <label class="lbl">@Model.VATorPAN</label> 
+       </div> 
+        </div>
+          </div>
+       <div class="contbox">     
+<div class="contdetails">
+    <h4>Contact Details</h4>
+    <div class="inputfield cont">
+          <label >Phone No</label>
+          <label class="lbl">@Model.Phone_No</label>
+       </div> 
+        <div class="inputfield cont">
+          <label>Mobile no</label>
+          <label class="lbl">@Model.Mobile_No</label>
+       </div> 
+       <div class="inputfield cont">
+          <label>Email</label>
+          <label class="lbl">@Model.Email</label>
+       </div> 
+        <div class="inputfield cont">
+          <label>Website</label>
+          <label class="lbl">@Model.WebSite</label>
+       </div> 
+      
+    </div>
+
+    <div class="mailingadd">
+        <h4>Maling address</h4>
+         <div class="inputfield">
+          <label>Country</label>
+         <label class="lbl">@Model.Country</label>
+       </div> 
+        <div class="inputfield">
+          <label>State</label>
+         <label class="lbl">@Model.State</label>
+       </div>
+        <div class="inputfield">
+          <label>City</label>
+          <label class="lbl">@Model.City</label>
+       </div>
+        <div class="inputfield">
+          <label>Address</label>
+         <label class="lbl">@Model.Address</label>
+       </div>
+        
+       
+       
+    </div>
+</div>
+  </div>
+  </div>

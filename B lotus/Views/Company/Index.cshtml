@@ -1,0 +1,115 @@
+﻿@model B_lotus.Models.Company
+@{
+    Layout = null;
+    
+      ViewData["Title"] = "Add Company Details";
+      ViewData["PageHEad"] = "Add Company Details";
+}
+
+<link rel="stylesheet" type="text/css" href="/css/companyprofile.css">
+   <form asp-action="Index" asp-controller="Company" enctype="multipart/form-data"> 
+    <div class="whole">
+     
+ <div class="wrapper">
+   
+    <div class="form">
+        <div class="topcont">
+        <div class="topleft">
+             <div class="inputfield top">
+          <label class="com">Company Name</label>
+          <input type="text" class="input" asp-for="CompanyName">
+          <span asp-validation-for="CompanyName" class="text-danger"></span>
+       </div>  
+        <div class="inputfield top">
+          <label class="com">Display Name</label>
+          <input type="text" class="input" name="DisplayName" placeholder="Enter Display Name For Company">
+          
+       </div> 
+        <div class="inputfield top">
+          <label class="com">Reg No</label>
+          <input type="text" class="input" asp-for="Reg_No" onkeypress="return isNumberKey(this, event);">
+          <span class="text-danger" asp-validation-for="Reg_No"></span>
+       </div>  
+       <div class="inputfield top" style="margin-bottom: 10px;">
+          <label class="com">VAT/PAN</label>
+          <input type="text" class="input" asp-for="VATorPAN" onkeypress="return isNumberKey(this, event);">
+          <span asp-validation-for="VATorPAN" class="text-danger"></span>
+       </div> 
+        </div>
+        <div class="topright">
+            <div class="inputfield top">
+          <label>Company Logo</label>
+            <input id="logo" class="form-input" type="file" required asp-for="Logo">
+            <span asp-validation-for="Logo" class="text-danger"></span>
+       </div>  
+        </div>
+          </div>
+       <div class="contbox">     
+<div class="contdetails">
+    <h4>Contact Details</h4>
+    <div class="inputfield cont">
+          <label>Phone No</label>
+          <input type="text" class="input" asp-for="Phone_No" onkeypress="return isNumberKey(this, event);">
+          <span asp-validation-for="Phone_No" class=text-danger ></span> 
+       </div> 
+        <div class="inputfield cont">
+          <label class="com">Mobile no</label>
+          <input type="text" class="input" onkeypress="return isNumberKey(this, event);" asp-for="Mobile_No">
+      <span asp-validation-for="Mobile_No" class="text-danger" ></span>
+      </div> 
+        <div class="inputfield cont">
+          <label class="com">Email</label>
+          <input type="email" class="input" asp-for="Email">
+          <span asp-validation-for="Email" class="text-danger"></span>
+       </div> 
+      <div class="inputfield cont">
+          <label class="com">Website</label>
+          <input type="text" class="input" asp-for="WebSite">
+          <span asp-validation-for="WebSite" class="text-danger"></span>
+       </div> 
+    </div>
+
+    <div class="mailingadd">
+        <h4>Maling address</h4>
+        
+        <div class="inputfield">
+          <label class="com">Country</label>
+         <input type="text" class="input" asp-for="Country">
+         <span asp-validation-for="Country" class="text-danger" ></span>
+       </div>
+        <div class="inputfield">
+          <label class="com">State</label>
+         <input type="text" class="input" asp-for="State">
+         <span asp-validation-for='State' class="text-danger"></span>
+       </div>
+        <div class="inputfield">
+          <label class="com">City</label>
+          <input type="text" class="input" asp-for="City">
+          <span asp-validation-for="City" class=text-danger></span>
+       </div>
+        <div class="inputfield">
+          <label class="com">Address</label>
+         <input type="text" class="input" asp-for="Address">
+         <span asp-validation-for="Address" class="text-danger"></span>
+       </div>
+        
+        
+    </div>
+
+ </div>
+      <div class="inputfield btnn">
+        <input type="submit" value="Submit" class="btn">
+      </div>
+    </div>
+</div>
+  </div>
+ </form>
+
+ <script src="~/js/NumberAndTime.js"></script>
+ <script>
+      //to disable back btn for next page
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+    //to disable back btn for next page
+ </script>
